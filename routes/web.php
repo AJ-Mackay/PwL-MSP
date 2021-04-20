@@ -25,4 +25,4 @@ Route::get('/admin/user/roles', ['middleware'=>'role', function () {
     return 'Middleware role';
 }]);
 
-Route::get('/admin', 'AdminController@index');
+Route::get('/admin', 'App\Http\Controllers\AdminController@index');
