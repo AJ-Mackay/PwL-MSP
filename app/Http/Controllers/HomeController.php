@@ -32,7 +32,12 @@ class HomeController extends Controller
     //    return session('edwin');
 
     //    $request->session()->forget('edwin');
-        $request->session()->flush(); // -- Delete ALL
-        return $request->session()->all();
+    //    $request->session()->flush(); -- Delete ALL
+    //    return $request->session()->all();
+
+    //    $request->session()->flash('message', 'Post created'); -- Only displays data once
+    //    $request->session()->reflash(); -- Data stays longer
+        $request->session()->keep('message'); // -- Can keep the message while removing other data
+        return $request->session()->get('message');
     }
 }
